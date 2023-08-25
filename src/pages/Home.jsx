@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { context, server } from '../main';
 import { toast } from 'react-hot-toast';
 import TodoItem from '../components/TodoItem';
+import { Navigate } from 'react-router-dom';
 
 const Home = () => {
   const [title, setTitle] = useState("");
@@ -73,7 +74,7 @@ const Home = () => {
       })
   }, [refresh])
 
-  if (!isAuthenticated) return <Navigate to={"/login"}/>
+  if (!isAuthenticated) return <Navigate to={"/login"} />;
 
   return (
     <div className='container'>
